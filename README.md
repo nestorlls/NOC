@@ -13,3 +13,6 @@ MAILER_MAIL=
 MAILER_MAIL_SECRET_KEY=
 PROD=false
 ```
+
+3. Ejecutar el comando `yarn` or `npm install`
+4. Ejecutar el comando `yarn dev` or `npm run dev`
