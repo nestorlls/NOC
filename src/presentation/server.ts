@@ -1,38 +1,39 @@
-import { CheckService } from '../domain/use-cases/checks/check-service';
-import { SendEmailLogs } from '../domain/use-cases/email/send-email-logs';
-import { FileSystemDataSource } from '../infrastructure/datasources/file-system.datasource';
-import { LogRepositoruyImpl } from '../infrastructure/repositories/log.repository.impl';
+import { CheckServiceMultiple, SendEmailLogs } from '../domain';
+import {
+  FileSystemDataSource,
+  LogRepositoruyImpl,
+  MongoLogDataSource,
+  PostgresDataSource,
+} from '../infrastructure';
+
 import { CronService } from './cron/cron-service';
 import { EmailService } from './email/email.service';
 
-const fileSystemLogRepository = new LogRepositoruyImpl(
-  new FileSystemDataSource()
-  // new PostgreSQLDataSource()
-  // new MongoDBDataSource()
-);
+const fsLogRepository = new LogRepositoruyImpl(new FileSystemDataSource());
+const mongoLogRepository = new LogRepositoruyImpl(new MongoLogDataSource());
+const postgresLogRepository = new LogRepositoruyImpl(new PostgresDataSource());
 
 const emailService = new EmailService();
 
 export class Server {
-  public static start() {
+  public static async start() {
     console.log('Server started');
 
     // todo: send email
-    new SendEmailLogs(emailService, fileSystemLogRepository).execute([
+    new SendEmailLogs(emailService, fsLogRepository).execute([
       'llanquepol@gmail.com',
     ]);
 
     emailService.sendEmailWithFileSystemLogs(['llanquepol@gmail.com']);
 
-    CronService.createJob('*/5 * * * * *', () => {
-      // const url = 'https://www.google.com';
-      const url = 'http://localhost:3000';
-      new CheckService(
-        fileSystemLogRepository,
-        undefined,
-        undefined
-        // () => console.log(`Success: ${url}`),
-        // (error) => console.log(error)
+    // todo: cron -- inyect repositorys - use case
+    CronService.createJob('*/25 * * * * *', () => {
+      const url = 'https://www.google.com';
+      // const url = 'http://localhost:3000';
+      new CheckServiceMultiple(
+        [fsLogRepository, mongoLogRepository, postgresLogRepository],
+        () => console.log(`Success: ${url}`),
+        (error) => console.log(error)
       ).execute(url);
     });
   }

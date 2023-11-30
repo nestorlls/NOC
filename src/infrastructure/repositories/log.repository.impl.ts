@@ -1,6 +1,9 @@
-import { LogDataSource } from '../../domain/datasources/log.datasource';
-import { LogEntity, LogSeveretyLevel } from '../../domain/entyties/log.entity';
-import { LogRepository } from '../../domain/repository/log.repository';
+import {
+  LogDataSource,
+  LogEntity,
+  LogRepository,
+  LogSeveretyLevel,
+} from '../../domain';
 
 export class LogRepositoruyImpl implements LogRepository {
   constructor(private readonly logDataSource: LogDataSource) {}

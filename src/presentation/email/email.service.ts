@@ -1,7 +1,5 @@
 import nodemailer from 'nodemailer';
 import { envs } from '../../config/plugins/envs.plugin';
-import { LogRepository } from '../../domain/repository/log.repository';
-import { LogEntity, LogSeveretyLevel } from '../../domain/entyties/log.entity';
 
 export interface EmailOptions {
   to: string | string[];
@@ -28,7 +26,7 @@ export class EmailService {
     const { to, subject, htmlBody, attachments = [] } = options;
 
     try {
-      const info = await this.tranporter.sendMail({
+      await this.tranporter.sendMail({
         to,
         subject,
         html: htmlBody,

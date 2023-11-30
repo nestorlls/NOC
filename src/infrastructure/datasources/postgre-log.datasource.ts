@@ -1,6 +1,5 @@
 import { PrismaClient, SeveretuLevel } from '@prisma/client';
-import { LogDataSource } from '../../domain/datasources/log.datasource';
-import { LogEntity, LogSeveretyLevel } from '../../domain/entyties/log.entity';
+import { LogDataSource, LogEntity, LogSeveretyLevel } from '../../domain';
 
 const severetyEnum = {
   low: SeveretuLevel.LOW,
