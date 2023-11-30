@@ -56,7 +56,7 @@ export class CheckServiceMultiple implements CheckServiceMultipleUseCase {
       };
 
       const log = new LogEntity(options);
-      this.callLogRepositories;
+      this.callLogRepositories(log);
       this.errorCallBack?.(`${error}`);
 
       return false;
