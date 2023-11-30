@@ -1,4 +1,4 @@
-import { LogModel } from '../../data/mongo';
+import { LogModel } from '../../data/mongodb';
 import { LogDataSource, LogEntity, LogSeveretyLevel } from '../../domain';
 
 export class MongoLogDataSource implements LogDataSource {
