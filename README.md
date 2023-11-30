@@ -1,10 +1,22 @@
-# Proyecto NOC
+  <p align="center">
+    <a href="https://www.typescriptlang.org/" target="blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png" width="50" alt="TypeScript Logo" /></a>
+    <a href="https://www.mongodb.com/" target="blank"><img src="https://seeklogo.com/images/M/mongodb-logo-D13D67C930-seeklogo.com.png" width="50" alt="MongoDb Logo" /></a>
+    <a href="https://www.postgresql.org/" target="blank"><img src="https://www.postgresql.org/media/img/about/press/elephant.png" width="50" alt="Postgres Logo" /></a>
+    <a href="https://www.docker.com/" target="blank"><img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png" width="50" alt="docker Logo" /></a>
+    <a href="https://www.prisma.io/" target="blank"><img src="https://prismalens.vercel.app/header/logo-dark.svg" width="150" alt="Prisma Logo" /></a>
+  </p>
 
-El objetivo es crear una serie de tareas usando Arquitectura Limpia con TypeScript
+# Proyecto NOC - Sistema de monitoreo 
+
+El objetivo es crear un servicio que pueda monitorear una Api si este están ejecutandose o no, se puede implementar en otras proyectos parecidos.
+- Registro de logs con niveles de severidad: low, medium o high
+- Registro de logs en el sistema de archivos
+- Registro de logs en una base de datos
+- Aplicando Arquitectura limppia
 
 # Dev
 
-1. Clonar el archivo env.template a .env
+1. Clonar el archivo `env.template` a `.env`
 2. Configurar las variables de entorno
 
 ```
