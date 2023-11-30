@@ -1,4 +1,4 @@
-import { LogEntity, LogSeveretyLevel } from '../../entyties/log.entity';
+import { LogEntity, LogSeveretyLevel } from '../../entities/log.entity';
 import { LogRepository } from '../../repository/log.repository';
 
 interface CheckServiceUseCase {

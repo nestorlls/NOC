@@ -2,7 +2,7 @@ import { LogDataSource } from '../../../src/domain/datasources/log.datasource';
 import {
   LogEntity,
   LogSeveretyLevel,
-} from '../../../src/domain/entyties/log.entity';
+} from '../../../src/domain/entities/log.entity';
 
 describe('Test log.datasource.ts LogDataSource', () => {
   const newLog = new LogEntity({

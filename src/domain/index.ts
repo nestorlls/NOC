@@ -1,4 +1,4 @@
-export { LogEntity, LogSeveretyLevel } from './entyties/log.entity';
+export { LogEntity, LogSeveretyLevel } from './entities/log.entity';
 export { LogDataSource } from './datasources/log.datasource';
 export { LogRepository } from './repository/log.repository';
 
