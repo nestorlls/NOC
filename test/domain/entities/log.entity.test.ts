@@ -24,7 +24,6 @@ describe('Test log.entity.ts LogEntity', () => {
     const dataJson = `{"level":"high","message":"http://localhost:3000 in not working. TypeError: fetch failed","createdAt":"2023-11-30T02:48:00.007Z","origin":"check-service-multiple.ts"}`;
 
     const log = LogEntity.fromJson(dataJson);
-    console.log(log);
 
     expect(log).toBeInstanceOf(LogEntity);
     expect(log.level).toBe(LogSeveretyLevel.high);
