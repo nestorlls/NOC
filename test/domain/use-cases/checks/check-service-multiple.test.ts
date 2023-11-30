@@ -42,6 +42,16 @@ describe('Test check-service-multiple.ts CheckServiceMultiple', () => {
     expect(wasOk).toBe(false);
     expect(mockSuccessCallBack).not.toHaveBeenCalled();
     expect(mockErrorCallBack).toHaveBeenCalled();
+
+    expect(mockFsRepository.savedLog).toHaveBeenCalledWith(
+      expect.any(LogEntity)
+    );
+    expect(mockMongoDbRepository.savedLog).toHaveBeenCalledWith(
+      expect.any(LogEntity)
+    );
+    expect(mockPostgresRepository.savedLog).toHaveBeenCalledWith(
+      expect.any(LogEntity)
+    );
   });
 
   test('Should not call any callbacks when array of repositories is empty and fetch is ok', async () => {
