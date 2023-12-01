@@ -1,7 +1,15 @@
 node_modules
+
+coverage
+
 mongo
 postgres
+mongo-test
+postgres-test
+
+
 yarn.lock
+package-lock.json
 
 #logs
 logs
