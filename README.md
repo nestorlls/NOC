@@ -6,9 +6,10 @@
     <a href="https://www.prisma.io/" target="blank"><img src="https://prismalens.vercel.app/header/logo-dark.svg" width="150" alt="Prisma Logo" /></a>
   </p>
 
-# Proyecto NOC - Sistema de monitoreo 
+# Proyecto NOC - Sistema de monitoreo
 
 El objetivo es crear un servicio que pueda monitorear una Api si este están ejecutandose o no, se puede implementar en otras proyectos parecidos.
+
 - Registro de logs con niveles de severidad: low, medium o high
 - Registro de logs en el sistema de archivos
 - Registro de logs en una base de datos
@@ -43,5 +44,11 @@ POSTGRES_DB=
 docker compose up -d
 ```
 
-3. Ejecutar el comando `yarn` or `npm install`
-4. Ejecutar el comando `yarn dev` or `npm run dev`
+4. Ejecutar el siguiente comando para migrar el Schema de Prisma
+
+```
+npx prisma migrate dev
+```
+
+5. Ejecutar el comando `yarn` or `npm install`
+6. Ejecutar el comando `yarn dev` or `npm run dev`
